@@ -52,13 +52,13 @@ color: #222121;
 }
 .bg-text{
     position: absolute;
-    font-size: 130px;
+    font-size: 90px;
     z-index: -150;
     color: #f2f2f2;
 }
 .bg-text-mv{
     position: absolute;
-    font-size: 130px;
+    font-size: 100px;
     z-index: -150;
     color: #f2f2f2;
 }
@@ -176,17 +176,19 @@ h4{
     margin: 40px 0;
 }
 #skills li{
-    padding: 10px;
-    /* background: #db1f57; */
+    
+    margin: 0 10px;
     grid-column: span 2;
     text-align: center;
+   
 
 }
 #skills img{
-    width: 40%;
+    width: 50%;
 }
 #skills h4{
     color: #db1f57;
+    font-size: 12px;
 }
 
 #contact{
@@ -216,6 +218,7 @@ h4{
 footer{
     padding: 30px 20px;
     background: var(--secondary);
+    background-size: cover;
 }
 footer .copyright{   
     grid-column: 4/8;
