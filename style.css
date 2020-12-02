@@ -1,224 +1,430 @@
-* {
-    box-sizing: border-box;
-  }
-body{
+/* variable */
+:root{
+    --primary: #FFFFFF;
+    --secondary: #db1f57;
+}
+
+/* reset */
+body,p,a,ul,li{
     margin: 0;
     padding: 0;
-    font-family:  sans-serif;
+    text-decoration: none;
 }
-p{
-    font-size: 1.2em;
-    line-height: 1.6em;
-}
-
-.bgsvg{
-    z-index: -1;
-    position: absolute;   
-}
-
- ul{
+li{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
 }
-.hide-desktop{
+
+
+/* base style */
+body{
+    background: var(--primary);
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+.button{
+    background: none;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.6);
+    display: inline-block;
+    cursor: pointer;
+}
+.button:hover{
+    color: #222;
+    background: var(--secondary);
+}
+
+input,textarea{
+background: rgba(246, 219, 229, 0.554);
+padding: 10px 16px;
+border-radius: 20px;
+border: 2px solid var(--secondary);
+color: #222121;
+
+}
+.bg-img {
+    position: absolute;
+    width: 106%;
+    z-index: -150;
+}
+.bg-text{
+    position: absolute;
+    font-size: 130px;
+    z-index: -150;
+    color: #f2f2f2;
+}
+.bg-text-mv{
+    position: absolute;
+    font-size: 130px;
+    z-index: -150;
+    color: #f2f2f2;
+}
+/* fonts  */
+@font-face{
+    
+}
+
+h1,h2,h3,h4{
+    
+    font-weight: normal;
+}
+p,a,li{
+    color: rgb(44, 2, 12);
+}
+h1,h3{
+    font-size: 1.2em;
+}
+h2{
+    font-size: 1.6em;
+}
+h4{
+    font-size: 1.1em;
+}
+.leading{
+    font-size: 1.1em;
+}
+.myname{
+    color: var(--secondary);
+}
+/* mobile style  */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+
+}
+.site-nav{
+    margin: 0 20px;
+}
+.site-nav ul{
     display: none;
 }
-
-
-header{   
-  display: flex;
-  justify-content: space-between;
-  margin-left: 40px;
-  margin-right: 140px;
-
-}
-.logo{
-    width: 60px;   
-}
-nav ul{
- 
-  display: flex; 
+.site-nav h1{
+    grid-column: 1/4;
+    grid-row: 1;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--secondary);
 }
 
-nav ul li {
+#welcome{
 
-    font-size: 1.2em;
-    font-weight: bold;
-
-}
-nav li a{
-    float: left;
-    display: block;
-    padding: 1em 2em;
-    margin-left: 2em ;
-    color: black;
-    text-decoration: none;   
+     padding: 0 20px 20px 20px;
 }
 
-.menu{
-    width: 45px;
-    margin-top: 45%;
-    z-index: 2;
+.welcome-text{
+    grid-column: 1/5;
 }
-.hero-section{
-    display: flex;
-    justify-content: space-between;
-    height: 100vh;
-    
+.welcome-img{
+    grid-column: 5/9;
 }
-.bgcircle{
-    width: 950px;
-    z-index: -1;
-    float: left;
-    position: absolute;
-    margin-left: -25%;
-    
-}
-button{
-    background-color: #a70b59; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-     margin-left: 300px; 
-    border-radius: 25px;
-}
-.bgcirclecontact{
-    width: 400px;
-    z-index: -1;
-    float: right;
-    position: absolute;
-    margin-left: 22%;
-   
-}
-.rgimg{
-    width: 50%;
-    height: 70%; 
+
+.welcome-img img {
+    width: 100%;
     position: relative;
-    z-index: 3;      
-    }
-
-h1.bgname{
-    margin-top: 70px;
-    margin-left: 50px;
-    font-size: 35em;
-    opacity: 5%;
-    z-index: -1;
-   position: absolute;
-
-}
-.left-side-heros p{
-    margin-left: 100px;
-   margin-top: 200px;
-    font-size: 3em;
-   z-index: 3;
-   position: relative;
-}
-.name-color{
-    font-weight: bold;
-    color: #DD2476; 
-}
-.title-text{
-    font-size: .8em;
 }
 
 
+.welcome-text a{
+    margin: 20px 0;
+}
 
- div.left-side-heros{
-    animation-duration: 3s;
-    animation-name: slidein;
-  }
-  
-  @keyframes slidein {
-    from {
-      margin-left: 10%;
-      margin-right: 0%;
-      visibility: collapse;
-    }
-  
-    to {
-      margin-right: 0%;
-      /* margin-left: 10%; */
-      visibility: visible;
-    
-    }
-  }
-h1.bgport{
-    margin-top: -40px;
-    margin-left: 100px;
-    font-size: 10em;
-    opacity: 5%;
-    z-index: -1;
-   position: absolute;
+#portfolio{
+    padding: 30px 20px;
+    /* background: var(--secondary); */
 }
-h1{
-    font-size: 3em;
-    margin-top: 60px;
-}
-.aboutsec{ 
-    height: 100vh;
-    padding: 1em;
-    /* background-image: url(img/contact-bg.svg);
-    background-size: cover; */
+
+#portfolio h3{
+    margin-bottom: 0;
     text-align: center;
-}
-.aboutsec p{
-    width: 60%;
-    text-align: center;
-    margin: 2% 3% 5% 20%;
-
-}
-.myprojectsec{
-    text-align: center;
-    height: 100vh;
-    padding: 1em;
+    font-size: 30px;
+    color: #000;
 }
 
-.skillsec{
-   
+.projects a{
+    grid-column: 1/9;
+    margin: 20px 0;
     display: flex;
-    justify-content: space-around;
-    
-   
 }
-.skillsec ul li{
-    line-height: 2em;
-    font-size: 1.6em;
-    
+
+.projects a *{
+    margin:  0 20px;
+    max-width: 60%;
+    align-self: center;
 }
-.contactsec{
+
+.projects h4{
+    color: #db1f57;
+}
+.skills{
+    position: absolute;
+    font-size: 100px;
+    z-index: -5;
+    color: #f2f2f2;
+     }
+#skills{
+    padding: 30px 20px;
+    background: var(--primary);
+}
+#skills h3{
     text-align: center;
-    height: 100vh;
-    padding: 1em;
+    z-index: 10;
+}
+#skills ul{
+    margin: 40px 0;
+}
+#skills li{
+    padding: 10px;
+    /* background: #db1f57; */
+    grid-column: span 2;
+    text-align: center;
 
-   
+}
+#skills img{
+    width: 40%;
+}
+#skills h4{
+    color: #db1f57;
 }
 
-input[type=text], textarea {
-    width: 60%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  }
-  input[type=submit] {
-    background-color: #DD2476;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  .cform{
-      margin-top: 50px;
-  }
+#contact{
+    padding: 30px 20px;
+    
+}
+
+#contact h3, #contact p{
+    text-align: center;
+    margin-bottom: 0;
+
+}
+#contact form{
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+#contact input, #contact textarea{
+    width: 100%;
+    margin: 10px 0;
+   
+}
+#contact .button{
+    margin-top: 10px;
+}
 footer{
-    text-align: center;
-    height: 40px;
-    background-color:#DD7834;
+    padding: 30px 20px;
+    background: var(--secondary);
+}
+footer .copyright{   
+    grid-column: 4/8;
+    font-size: 0.9em;
+}
+
+
+
+/* small tablet styles  */
+
+@media screen and (min-width: 620px){
+
+    .welcome-text{
+        grid-column: 1/4;
+    }
+    .welcome-img{
+        grid-column: 4/9;
+    }
+    .welcome-img img {
+        width: 100%;
+    }
+    .bg-img {
+        position: absolute;
+        width: 105%;
+        z-index: -150;
+    }
+    .bg-text-mv{
+        position: absolute;
+        font-size: 150px;
+        z-index: -150;
+        color: #f2f2f2;
+    }
+    .projects{
+        margin-top: 40px;
+    }
+    .projects a{
+        grid-column: span 4;
+        display: block;
+    }
+    .projects a *{
+       
+        max-width: 60%;
+        margin: 10px 20%;
+    }
+    .projects h4{
+        text-align: center;
+    }
+    #skills{
+        padding: 30px 10px;
+    }
+    footer{
+        background-size: 20%;
+    }
+}
+
+/* large talets and laptop style  */
+
+@media screen and (min-width: 960px){
+
+    body{
+        font-size: 20px;
+    }
+    .grid{
+        width: 100%;
+        max-width: 1060px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .welcome-text{
+        grid-column: 1/4;
+        margin: 0 20px;
+       align-self: center;
+    }
+   
+    #welcome{
+        padding-bottom: 40px;
+    }
+    .bg-text-mv{
+        position: absolute;
+        font-size: 200px;
+        z-index: -150;
+        color: #f2f2f2;
+    }
+   
+    .site-nav ul{
+        display: flex;
+        grid-column: 6/9;
+        justify-content: space-around;
+        align-self: center;
+
+    }
+    .site-nav li{
+        margin-left: 20px;
+    }
+    .site-nav h1{
+        grid-column: 1/3;
+        margin-left: 30px;
+       
+    }
+    .projects{
+        margin-top: 40px;
+    }
+    .projects a{
+        grid-column: span 2;
+        display: block;
+    }
+    .projects a *{
+       
+        max-width: 80%;
+        margin: 10px 10%;
+    }
+    .projects h4{
+        text-align: center;
+    }
+    .skills{
+            position: absolute;
+            font-size: 130px;
+            color: #f2f2f2;
+            text-align: center;   
+    }
+    #skills{
+        padding: 30px 20px;
+    }
+    #skills ul{
+        margin: 40px auto;
+    }
+    #skills li{
+        grid-column: span 2;
+    }
+    footer{
+        padding: 40px 20px;
+        background-size: 25%;
+    }
+    
+}
+
+/* desktop style  */
+
+@media screen and (min-width: 1200px){
+    body{
+        font-size: 24px;
+    }
+    #welcome, #portfolio, #skills{
+        padding:  90px 0;
+        height: 100vh;
+        
+    }
+    #contact {
+        padding:  90px 0;
+ 
+    }
+    .welcome-text{
+        margin-top: -150px;
+    }
+ 
+    .welcome-img{
+        grid-column: 5/9;
+    }
+    .welcome-img img {
+        width: 130%;
+    }
+    .projects a *{
+        max-width: 100%;
+        margin: 30px 0;
+    }
+    .bg-text-mv{
+        position: absolute;
+        font-size: 250px;
+        z-index: -150;
+        color: #f2f2f2;
+    }
+    #skills img *{
+        max-width: 100%;
+        height: auto;
+    }
+    .bg-text{
+        position: absolute;
+        font-size: 180px;
+        z-index: -150;
+        color: #f2f2f2;
+        
+    }
+    .skills{
+        position: absolute;
+        font-size: 200px;
+        z-index: 1;
+        color: #f2f2f2;
+         }
+    .site-nav h1{
+        grid-column: 1/4;
+        grid-row: 1;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--secondary);
+    }
+    #contact {
+        margin-top: 300px;
+        padding-top: 100px;
+    }
+    #contact form{
+        width: 100%;
+        max-width: 600px;
+        margin: 40px auto;
+        text-align: center;
+        
+    }
+    #contact input, #contact textarea{
+        width: 100%;
+        margin: 10px 0;
+       
+    }
+
 }
